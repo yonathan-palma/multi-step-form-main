@@ -1,0 +1,85 @@
+.plan input[type=radio]{
+    display: none;
+}
+.plan main{
+    display: grid;
+    grid-gap: 2rem;
+}
+.plan .section_input_radio{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.plan .label_card{
+    border: solid 1px var(--Lightgray);
+    border-radius: 6px;
+    padding: 1rem;
+    display: grid;
+    font-family: 'Ubuntu-bold';
+    flex: 1;
+    color: var(--Marineblue);
+    cursor: pointer;
+}
+.label_card img{
+    margin-bottom: 2rem;
+}
+.label_card .price_plan{
+    font-family: 'Ubuntu';
+    color: var(--Coolgray);
+}
+input[type="radio"]:checked + label{
+    border-color: var(--Purplishblue);
+    background-color: var(--Magnolia);
+}
+.label_card .free{
+    margin: 0;
+    color: var(--Marineblue);
+}
+.switch{
+    background-color: var(--Magnolia);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'Ubuntu-Medium';
+    color: var(--Coolgray);
+}
+.switch .switch-label{
+    font-size: 16px;   
+}
+.switch-input[type=checkbox]{
+	height: 0;
+	width: 0;
+	display: none;
+}
+.switch-label{
+    cursor: pointer;
+	text-indent: -9999px;
+	width: 50px;
+	height: 24px;
+	background: var(--Marineblue);
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+.switch-label::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    background: var(--White);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.switch input:checked + label::after{
+    /* left: calc(100% -4px); */
+    transform: translateX(100%);
+}
+/* .switch-label::after:has(> input:checked){
+    left: calc(100% -4px);
+    transform: translateX(100%);
+} */

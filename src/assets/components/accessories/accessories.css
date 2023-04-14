@@ -1,0 +1,35 @@
+.label_accessories{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 3rem;
+    align-items: center;
+    border: solid 1px var(--Lightgray);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.label_accessories input[type=checkbox]{
+    height: 18px;
+    width: 18px;
+}
+.label_accessories:has( > input[type=checkbox]:checked ){
+    border-color: var(--Purplishblue);
+    background-color: var(--Magnolia);
+}
+.label_accessories .title_label{
+    flex:1;
+}
+.title_label h2, h3{
+    font-size: 16px;
+    margin:  0;
+}
+.title_label h2{
+    color: var(--Marineblue);
+    font-family: 'Ubuntu-bold';
+}
+.title_label h3{
+    color: var(--Coolgray);
+}
+.label_accessories .price_accesories{
+    color: var(--Purplishblue);
+}

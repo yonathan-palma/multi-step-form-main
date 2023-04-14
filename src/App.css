@@ -1,0 +1,70 @@
+#root {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.App{
+  background-color: var(--White);
+  border-radius: 12px;
+  width: 60%;
+  max-width: 1024px;
+}
+.form_card{
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  /* grid-gap: 4rem; */
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.23);
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.23);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.23);
+}
+.form_card h1{
+  margin-bottom: 0;
+  font-family:'Ubuntu-Bold';
+  font-size: 2rem;
+}
+.form_card p{
+  color: var(--Coolgray);
+  font-family:'Ubuntu-Medium';
+}
+
+.form_card .form_content{
+  text-align: left;
+}
+
+.section_form{
+  width: 75%;
+  margin: auto;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+
+}
+.footer_info{
+  flex: 1;
+  display: flex;
+  align-items: end;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+.btn_next{
+  background-color: var(--Marineblue);
+  color: var(--White)
+}
+.btn_goBack{
+  color: var(--Coolgray);
+  font-family: 'Ubuntu-Medium';
+}
+.change_link{
+  color: var(--Coolgray);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.change_link:hover{
+  color: var(--Purplishblue);
+}
+
+

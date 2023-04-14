@@ -1,0 +1,44 @@
+.aside_list{
+    list-style: none;
+    /* padding: 0; */
+}
+.form_card .form_aside{
+    background-image: url(../../images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+}
+.aside_item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--White);
+    text-align: left;
+    margin: 2rem 0;
+}
+.item_num{
+    width: 2rem;
+    height: 2rem;
+    background-color: var();
+    border: solid 1px var(--White);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.item_title > *{
+    margin: 0;
+}
+.item_title p{
+    color: var(--Pastelblue);
+}
+.item_title h2{
+   font-size: 14px;
+   font-family: 'Ubuntu-Bold';
+   letter-spacing: 2px;
+}
+.active{
+    background-color: var(--Pastelblue);
+    border: none;
+    color: var(--Marineblue);
+}
