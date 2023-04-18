@@ -30,7 +30,8 @@ export default function FormAside({section}){
                     <div className='item_title'>
                         <p>STEP4</p>
                         <h2>SUMMARY</h2>
-                    </div></li> 
+                    </div>
+                </li> 
             </ul>
         </div>
     )

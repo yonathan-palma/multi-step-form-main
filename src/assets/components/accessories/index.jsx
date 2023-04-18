@@ -1,28 +1,11 @@
 import PriceTime from "../priceTime";
+//data
+import initiaValues from "../../service/initialValues.json"
 import "./accessories.css";
 
 export default function SectionAccessories({setValues, values, setSection}){
 
-    const accessoriesList = [
-        {
-            id:"service",
-            title:"Online service",
-            description:"Access to multiplayer games",
-            price:{monthly: 1,yearly: 10},
-        },
-        {
-            id:"storage",
-            title:"Larger storage",
-            description:"Extra 1TB of cloud save",
-            price:{monthly: 2,yearly: 20},
-        },
-        {
-            id:"profile",
-            title:"Customizable Profile",
-            description:"Custom theme on your profile",
-            price:{monthly: 2,yearly: 20},
-        }
-    ]
+    const {accessoriesList} = initiaValues;
 
     const handleChange=(e, price)=>{
         const {id, checked ,dataset} = e.target;
@@ -41,7 +24,6 @@ export default function SectionAccessories({setValues, values, setSection}){
           accessories:accessories
         }
         // newValues.accessories = accessories;
-        console.log(newValues)
         setValues(newValues)
     }
     return(
@@ -56,7 +38,6 @@ export default function SectionAccessories({setValues, values, setSection}){
                 {
                     accessoriesList.map(element => {
                         let checked = values.accessories.some(elem => elem.name == element.title);
-                        // console.log(checked)
                         return(
                             <label htmlFor={element.id} className="label_accessories" key={element.id}>
                                 <input 

@@ -7,37 +7,18 @@ import arcade from "../../images/icon-arcade.svg";
 import advance from "../../images/icon-Advanced.svg";
 import pro from "../../images/icon-pro.svg";
 
+//data
+import initiaValues from "../../service/initialValues.json"
+
 //css
 import './SectionPlan.css';
 
 export default function SectionPlan({setValues, values, setSection}){
+    
+    const {accessoriesList, planes} = initiaValues;
 
-    const accessoriesList = [
-        {
-            id:"service",
-            title:"Online service",
-            description:"Access to multiplayer games",
-            price:{monthly: 1,yearly: 10},
-        },
-        {
-            id:"storage",
-            title:"Larger storage",
-            description:"Extra 1TB of cloud save",
-            price:{monthly: 2,yearly: 20},
-        },
-        {
-            id:"profile",
-            title:"Customizable Profile",
-            description:"Custom theme on your profile",
-            price:{monthly: 2,yearly: 20},
-        }
-    ]
     const [checked,setChecked] = useState(false);
-    const plan_cost = {
-        arcade:{monthly: 9,yearly: 90},
-        advance:{monthly: 12,yearly: 120},
-        pro:{monthly: 15,yearly: 150}
-    }
+
     const handleChange=(e)=>{
         const {name, value} = e.target;
         // const price = e.target.dataset.price;
@@ -45,9 +26,8 @@ export default function SectionPlan({setValues, values, setSection}){
         const newValues={
           ...values,
           [name]: value,
-          cost_plan: plan_cost[value][values.plan_type],
+          cost_plan: planes[value][values.plan_type],
         }
-        console.log(newValues)
         setValues(newValues)
     }
 
@@ -67,10 +47,9 @@ export default function SectionPlan({setValues, values, setSection}){
         const newValues={
             ...values,
             plan_type: plan_type,
-            cost_plan: plan_cost[radio_plan][plan_type],
+            cost_plan: planes[radio_plan][plan_type],
             accessories: newAccessories
         }
-        console.log(values)
         setValues(newValues);
     }
 
@@ -94,12 +73,14 @@ export default function SectionPlan({setValues, values, setSection}){
                     />
                     <label htmlFor="arcade" className="label_card">
                         <img src={arcade} alt="Arcade" />
-                        Arcade
-                        <PriceTime 
-                            price={checked ? 90 : 9 } 
-                            time={checked ? 'mo' : 'yr'}
-                        />
-                        {values.plan_type == "yearly" && <p className="free">2 mouths free</p> } 
+                       <div className="label_plan">
+                            Arcade
+                            <PriceTime 
+                                price={checked ? 90 : 9 } 
+                                time={checked ? 'mo' : 'yr'}
+                            />
+                            {values.plan_type == "yearly" && <p className="free">2 mouths free</p> } 
+                       </div>
                     </label>
                     <input 
                         onChange={handleChange} 
@@ -111,12 +92,14 @@ export default function SectionPlan({setValues, values, setSection}){
                     />
                     <label htmlFor="advance" className="label_card">
                         <img src={advance} alt="" />
-                        Advance
-                        <PriceTime 
-                            price={checked ? 120 : 12 } 
-                            time={checked ? 'mo' : 'yr'}
-                        />
-                        {values.plan_type == "yearly" && <p className="free">2 mouths free</p> } 
+                        <div className="label_plan">
+                            Advance
+                            <PriceTime 
+                                price={checked ? 120 : 12 } 
+                                time={checked ? 'mo' : 'yr'}
+                            />
+                            {values.plan_type == "yearly" && <p className="free">2 mouths free</p> } 
+                        </div>
                     </label>
                     <input 
                         onChange={handleChange}
@@ -128,12 +111,15 @@ export default function SectionPlan({setValues, values, setSection}){
                     />
                     <label htmlFor="pro" className="label_card">
                         <img src={pro} alt="" />
-                        Pro
-                        <PriceTime 
-                            price={checked ? 150: 15 } 
-                            time={checked ? 'mo' : 'yr'}
-                        />
-                        {values.plan_type == "yearly" && <p className="free">2 mouths free</p> } 
+                        <div className="label_plan">
+                            Pro
+                            <PriceTime 
+                                price={checked ? 150: 15 } 
+                                time={checked ? 'mo' : 'yr'}
+                            />
+                            {values.plan_type == "yearly" && <p className="free">2 mouths free</p> } 
+                        </div>
+                        
                     </label>
                 </section> 
                 <section className="switch">

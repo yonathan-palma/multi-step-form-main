@@ -1,3 +1,4 @@
+
 .label_accessories{
     display: flex;
     /* justify-content: space-between; */
@@ -27,9 +28,15 @@
     color: var(--Marineblue);
     font-family: 'Ubuntu-bold';
 }
-.title_label h3{
+.title_label h3{ 
     color: var(--Coolgray);
 }
 .label_accessories .price_accesories{
     color: var(--Purplishblue);
+}
+
+@media (max-width:1024px){
+    .label_accessories{
+        gap: 1rem;
+    }
 }

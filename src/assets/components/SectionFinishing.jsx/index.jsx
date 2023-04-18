@@ -1,4 +1,5 @@
 import PriceTime from "../priceTime";
+import initiaValues from "../../service/initialValues.json"
 
 //css
 import "./Finishing.css";
@@ -7,18 +8,13 @@ import "./Finishing.css";
 export default function SEctionFinishing({values, setSection, setValues}){
 
     const {radio_plan, plan_type, accessories, cost_plan} = values;
-
-    const plan_cost = {
-        arcade:{monthly: 9,yearly: 90},
-        advance:{monthly: 12,yearly: 120},
-        pro:{monthly: 15,yearly: 150}
-    }
+    const {planes} = initiaValues;
 
     const totalAccessories = accessories.reduce((acu, elem) =>{
         return acu + elem.price
     }, 0);
 
-    const plan = plan_cost[values.radio_plan];
+    const plan = planes[values.radio_plan];
 
     const handleSubmit =()=>{
         let total = totalAccessories + cost_plan;

@@ -6,6 +6,9 @@
   width: 100%;
 }
 
+header.header{
+  width: 100%;
+}
 .App{
   background-color: var(--White);
   border-radius: 12px;
@@ -52,7 +55,8 @@
 }
 .btn_next{
   background-color: var(--Marineblue);
-  color: var(--White)
+  color: var(--White);
+  /* margin-left: auto; */
 }
 .btn_goBack{
   color: var(--Coolgray);
@@ -65,6 +69,38 @@
 }
 .change_link:hover{
   color: var(--Purplishblue);
+}
+
+@media (max-width:1024px){
+  .App{
+    width: 80%;
+    max-width: 425px;
+  }
+  .form_card{
+    grid-template-columns: auto;
+    margin-top: 9rem;
+    /* position: relative; */
+    z-index: 10;
+  }
+  .section_form{
+    height: auto;
+    width: 90%;
+  }
+  .footer_info{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: var(--White);
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  #root {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6rem;
+  }
 }
 
 

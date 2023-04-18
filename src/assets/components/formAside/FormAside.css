@@ -2,7 +2,7 @@
     list-style: none;
     /* padding: 0; */
 }
-.form_card .form_aside{
+.form_aside{
     background-image: url(../../images/bg-sidebar-desktop.svg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -41,4 +41,24 @@
     background-color: var(--Pastelblue);
     border: none;
     color: var(--Marineblue);
+}
+
+@media (max-width:1024px){
+    .form_aside{
+        background-image: url(../../images/bg-sidebar-mobile.svg);
+        border-radius: 0;
+        height: 240px;
+        position: absolute;
+        width: 100%;
+    }
+    .item_title{
+        display: none;
+    }
+    .aside_list{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 0;
+    }
 }

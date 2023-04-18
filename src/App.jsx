@@ -1,6 +1,7 @@
 //hook
 import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import MediaQuery,{useMediaQuery} from 'react-responsive';
 
 //components
 import FormAside from './assets/components/formAside';
@@ -9,6 +10,7 @@ import SectionPlan from './assets/components/SectionPlan';
 import SectionAccessories from './assets/components/accessories';
 import SEctionFinishing from './assets/components/SectionFinishing.jsx';
 import { SectionThank } from './assets/components/sectionThank';
+import Footer from './assets/components/Footer';
 
 //css
 import './App.css'
@@ -16,6 +18,9 @@ import './App.css'
 function App() {
 
   // const {register, handleSubmit} = useForm();
+  const isDesktop = useMediaQuery({ query: '(min-width: 1025px)' });
+  const isMovile = useMediaQuery({ query: '(max-width: 768px)' });
+  
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -23,18 +28,27 @@ function App() {
     radio_plan: "arcade",
     plan_type:"monthly",
     cost_plan : 9,
-    accessories: [],
+    accessories: []
   });
-  const [section, setSection] = useState('info')
+
+  const [section, setSection] = useState('info');
+  const sections = ['info','plan','accessories','finishing','thank'];
 
   const handleSubmit =(e)=>{
     // e.target.submit();
     // setSection();
   }
+  const updateSection = ()=>{
+    const indexSection = sections.findIndex('section');
+    setSection(sections[indexSection + 1]);
+  }
 
-  return (
-    <div className="App form_card">
-      <FormAside section={section} />
+  return (<>
+    <header className='header'>
+      {isMovile && <FormAside section={section} />}
+    </header>
+    <div className="App form_card" role='main'>
+      {isDesktop && <FormAside section={section} />}
       <div className="form_content">
         <form onSubmit={handleSubmit} >
           { section == 'info' && <SectionInfo setValues={setValues} values={values} setSection={setSection} />}
@@ -45,7 +59,8 @@ function App() {
         </form>
       </div>
     </div>
-  )
+    {/* { isMovile && <Footer /> } */}
+    </>)
 }
 
 export default App

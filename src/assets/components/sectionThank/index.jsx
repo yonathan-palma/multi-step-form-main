@@ -22,8 +22,7 @@ export function SectionThank({setSection, setValues}){
             <p className="thank_you_description font">
                 Thanks for confirming your subscription! We hope you have fun
                 using our platform. If you ever need support, please feel free
-                to email us at haywayaheadshotstrategy.
-                fx@gmail.com.
+                to email us at support@gmail.com.
             </p>
             <a className="change_link" onClick={home}>Home</a>
         </div>

@@ -79,7 +79,18 @@ input[type="radio"]:checked + label{
     /* left: calc(100% -4px); */
     transform: translateX(100%);
 }
-/* .switch-label::after:has(> input:checked){
-    left: calc(100% -4px);
-    transform: translateX(100%);
-} */
+
+@media (max-width:1024px){
+    .label_plan{
+        display: flex;
+        flex-direction: column;
+    }
+    .plan .section_input_radio{
+        flex-direction: column;
+    }
+    .plan .label_card{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
