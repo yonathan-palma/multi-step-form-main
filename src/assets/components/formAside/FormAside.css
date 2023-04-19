@@ -1,64 +1,64 @@
-.aside_list{
-    list-style: none;
-    /* padding: 0; */
+.aside_list {
+  list-style: none;
+  /* padding: 0; */
 }
-.form_aside{
-    background-image: url(../../images/bg-sidebar-desktop.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 12px;
+.form_aside {
+  background-image: url(../../images/bg-sidebar-desktop.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
 }
-.aside_item{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--White);
-    text-align: left;
-    margin: 2rem 0;
+.aside_item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--White);
+  text-align: left;
+  margin: 2rem 0;
 }
-.item_num{
-    width: 2rem;
-    height: 2rem;
-    background-color: var();
-    border: solid 1px var(--White);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
+.item_num {
+  width: 2rem;
+  height: 2rem;
+  background-color: var();
+  border: solid 1px var(--White);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
-.item_title > *{
-    margin: 0;
+.item_title > * {
+  margin: 0;
 }
-.item_title p{
-    color: var(--Pastelblue);
+.item_title p {
+  color: var(--Pastelblue);
 }
-.item_title h2{
-   font-size: 14px;
-   font-family: 'Ubuntu-Bold';
-   letter-spacing: 2px;
+.item_title h2 {
+  font-size: 14px;
+  font-family: "Ubuntu-Bold";
+  letter-spacing: 2px;
 }
-.active{
-    background-color: var(--Pastelblue);
-    border: none;
-    color: var(--Marineblue);
+.active {
+  background-color: var(--Pastelblue);
+  border: none;
+  color: var(--Marineblue);
 }
 
-@media (max-width:1024px){
-    .form_aside{
-        background-image: url(../../images/bg-sidebar-mobile.svg);
-        border-radius: 0;
-        height: 240px;
-        position: absolute;
-        width: 100%;
-    }
-    .item_title{
-        display: none;
-    }
-    .aside_list{
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 0;
-    }
+@media (max-width: 1024px) {
+  .form_aside {
+    background-image: url(../../images/bg-sidebar-mobile.svg);
+    border-radius: 0;
+    height: 240px;
+    position: absolute;
+    width: 100%;
+  }
+  .item_title {
+    display: none;
+  }
+  .aside_list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+  }
 }

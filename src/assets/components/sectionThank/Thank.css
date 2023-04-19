@@ -1,11 +1,11 @@
-.thanks{
-    display: grid;
-    place-items: center;
-    place-content: center;
+.thanks {
+  display: grid;
+  place-items: center;
+  place-content: center;
 }
-.thanks .thanks_img{
-    width: 100px;
+.thanks .thanks_img {
+  width: 100px;
 }
-.thanks .thank_you_description{
-    text-align: center;
+.thanks .thank_you_description {
+  text-align: center;
 }

@@ -1,42 +1,46 @@
-
-  .info main{
-    /* margin: 2rem 0 4rem 0; */
-    display: grid;
-  }
-  .info label{
-    font-family: 'Ubuntu-Medium';
-    font-size: 14px;
-    color: var(--Marineblue);
-    margin-top: 2rem;
-  }
-  .info .footer_info{
-    justify-content: end;
-  }
-  .form_content input[type=text], input[type=email]   {
-    box-sizing: border-box;
-    border-radius: 6px;
-    width: 100%;
-    padding: 0.7rem;
-    font-size: 16px;
-    font-family: 'Ubuntu-Medium';
-    border: unset;
-    border: solid 2px var(--Lightgray);
-  }
-  .form_content input[type=text]::placeholder ,input[type=email]::placeholder{
-    color: var(--Coolgray);
-  }
-input[type=text]:focus-visible ,input[type=email]:focus-visible{
-  outline:  solid 2px var(--Purplishblue);
+.info main {
+  /* margin: 2rem 0 4rem 0; */
+  display: grid;
 }
-.info main label{
+.info label {
+  font-family: "Ubuntu-Medium";
+  font-size: 14px;
+  color: var(--Marineblue);
+  margin-top: 2rem;
+}
+.info .footer_info {
+  justify-content: end;
+}
+.form_content input[type="text"],
+input[type="email"] {
+  box-sizing: border-box;
+  border-radius: 6px;
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 16px;
+  font-family: "Ubuntu-Medium";
+  border: unset;
+  border: solid 2px var(--Lightgray);
+  background-color: var(--White);
+  color: var(--Marineblue);
+}
+.form_content input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+  color: var(--Coolgray);
+}
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible {
+  outline: solid 2px var(--Purplishblue);
+}
+.info main label {
   display: flex;
   justify-content: space-between;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
-.error{
+.error {
   color: var(--Strawberryred);
-  font-family: 'Ubuntu-bold';
+  font-family: "Ubuntu-bold";
 }
-.input_error{
-  outline:  solid 2px var(--Strawberryred);
+.input_error {
+  outline: solid 2px var(--Strawberryred);
 }
