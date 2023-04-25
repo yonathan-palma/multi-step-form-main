@@ -1,27 +1,34 @@
+//hook
+import { useNavigate, Link } from "react-router-dom";
+import updateAction from "../../updateActions";
+import { useStateMachine } from "little-state-machine";
+
 import PriceTime from "../priceTime";
 import initiaValues from "../../service/initialValues.json";
 
 //css
 import "./Finishing.css";
 
-export default function SEctionFinishing({ values, setSection, setValues }) {
-  const { radio_plan, plan_type, accessories, cost_plan } = values;
+export default function SEctionFinishing({ props }) {
+  const { actions, state } = useStateMachine({ updateAction });
+  const { radio_plan, plan_type, accessories, cost_plan } = state.data;
   const { planes } = initiaValues;
-
+  const navigate = useNavigate();
   const totalAccessories = accessories.reduce((acu, elem) => {
-    return acu + elem.price;
+    return acu + elem.price[plan_type];
   }, 0);
 
-  const plan = planes[values.radio_plan];
+  const plan = planes[radio_plan];
 
   const handleSubmit = () => {
-    let total = totalAccessories + cost_plan;
-    const newValues = {
-      ...values,
-      total: total,
-    };
-    setValues(newValues);
-    setSection("thank");
+    let total = totalAccessories + plan[plan_type];
+
+    actions.updateAction({ data: { ...state.data, total } });
+    navigate("/thanks/");
+  };
+  const goBack = (section) => {
+    actions.updateAction({ data: { ...state.data }, section: section });
+    navigate(`/${section}/`);
   };
 
   return (
@@ -38,13 +45,14 @@ export default function SEctionFinishing({ values, setSection, setValues }) {
                 {`${radio_plan[0].toUpperCase() + radio_plan.substring(1)} `}(
                 {`${plan_type[0].toUpperCase() + plan_type.substring(1)}`})
               </p>
-              <a className="change_link" onClick={() => setSection("plan")}>
+              <a className="change_link" onClick={() => goBack("planes")}>
                 Change
               </a>
+              {/* <Link to="/planes/">Change</Link> */}
             </div>
             <p className="price_order radio_plan_title">
               <PriceTime
-                price={plan[values.plan_type]}
+                price={plan[plan_type]}
                 time={plan_type == "monthly" ? "mo" : "yr"}
               />
             </p>
@@ -59,7 +67,7 @@ export default function SEctionFinishing({ values, setSection, setValues }) {
                   <div className="accesoriePrice">
                     +
                     <PriceTime
-                      price={elem.price}
+                      price={elem.price[plan_type]}
                       time={plan_type == "monthly" ? "mo" : "yr"}
                     />
                   </div>
@@ -73,7 +81,7 @@ export default function SEctionFinishing({ values, setSection, setValues }) {
           <p className="total_cost">
             {plan_type == "monthly" ? "+" : ""}
             <PriceTime
-              price={totalAccessories + cost_plan}
+              price={totalAccessories + plan[plan_type]}
               time={plan_type == "monthly" ? "mo" : "yr"}
             />
           </p>
@@ -83,7 +91,7 @@ export default function SEctionFinishing({ values, setSection, setValues }) {
         <button
           type="button"
           className="btn_goBack"
-          onClick={() => setSection("accessories")}
+          onClick={() => goBack("accesories")}
         >
           Go Back
         </button>
