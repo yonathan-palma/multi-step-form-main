@@ -30,3 +30,6 @@
   color: var(--Purplishblue);
   font-family: "Ubuntu-bold";
 }
+.accesoriePrice {
+  color: var(--Marineblue);
+}

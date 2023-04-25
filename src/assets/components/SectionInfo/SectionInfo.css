@@ -11,7 +11,7 @@
 .info .footer_info {
   justify-content: end;
 }
-.form_content input[type="text"],
+input[type="text"],
 input[type="email"] {
   box-sizing: border-box;
   border-radius: 6px;
@@ -24,7 +24,7 @@ input[type="email"] {
   background-color: var(--White);
   color: var(--Marineblue);
 }
-.form_content input[type="text"]::placeholder,
+input[type="text"]::placeholder,
 input[type="email"]::placeholder {
   color: var(--Coolgray);
 }

@@ -34,7 +34,7 @@ header.header {
   font-family: "Ubuntu-Medium";
 }
 
-.form_card .form_content {
+.form_card .section_form {
   text-align: left;
 }
 
@@ -98,7 +98,7 @@ header.header {
   #root {
     display: flex;
     flex-direction: column;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
   header.header {
     display: block;

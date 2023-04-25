@@ -1,6 +1,10 @@
+import { useStateMachine } from "little-state-machine";
+import updateAction from "../../updateActions";
 import "./FormAside.css";
 
-export default function FormAside({ section }) {
+export default function FormAside() {
+  const { actions, state } = useStateMachine({ updateAction });
+  let { section } = state;
   return (
     <div className="form_aside">
       <ul className="aside_list">
@@ -12,14 +16,14 @@ export default function FormAside({ section }) {
           </div>
         </li>
         <li className="aside_item">
-          <div className={`item_num ${section == "plan" && "active"}`}>2</div>
+          <div className={`item_num ${section == "planes" && "active"}`}>2</div>
           <div className="item_title">
             <p>STEP2</p>
             <h2>SELECT PLAN</h2>
           </div>
         </li>
         <li className="aside_item">
-          <div className={`item_num ${section == "accessories" && "active"}`}>
+          <div className={`item_num ${section == "accesories" && "active"}`}>
             3
           </div>
           <div className="item_title">
@@ -28,9 +32,7 @@ export default function FormAside({ section }) {
           </div>
         </li>
         <li className="aside_item">
-          <div className={`item_num ${section == "finishing" && "active"}`}>
-            4
-          </div>
+          <div className={`item_num ${section == "finish" && "active"}`}>4</div>
           <div className="item_title">
             <p>STEP4</p>
             <h2>SUMMARY</h2>

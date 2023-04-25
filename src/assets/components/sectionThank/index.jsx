@@ -1,18 +1,17 @@
+//hook
+import { useNavigate } from "react-router-dom";
+import updateAction from "../../updateActions";
+import { useStateMachine } from "little-state-machine";
+
 import iconThanks from "../../images/icon-thank-you.svg";
 import "./Thank.css";
 
-export function SectionThank({ setSection, setValues }) {
+export function SectionThank({ props }) {
+  const { actions, state } = useStateMachine({ updateAction });
+  const navigate = useNavigate();
   const home = () => {
-    setValues({
-      name: "",
-      email: "",
-      phone: "",
-      radio_plan: "arcade",
-      plan_type: "monthly",
-      cost_plan: 9,
-      accessories: [],
-    });
-    setSection("info");
+    actions.updateAction({ data: {}, section: "info" });
+    navigate("/multi-step-form-main/");
   };
   return (
     <div className="section_form thanks">
